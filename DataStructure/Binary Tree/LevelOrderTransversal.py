@@ -1,3 +1,6 @@
+# Given a pointer to the root of a binary tree, you need to print the level order traversal of this tree. 
+# In level-order traversal, nodes are visited level by level from left to right. Complete the function 
+
 from CreateBinaryTree import CreateTree
 
 
