@@ -36,10 +36,10 @@ class BottomUpFibonacci:
 
 
 class main:
-    fibonacci_Nth_number = [100]
+    fibonacci_Nth_number = [5]
     for value in fibonacci_Nth_number:
         start_time = time.time()
-        result = UnoptimizedFibonacci.get_Nth_number(value)
+        result = MemoizedFibonacci.get_Nth_number(value)
         stoped_time = time.time()
         elapsedTime = (stoped_time - start_time)
         elapsedTime = elapsedTime if elapsedTime > 0 else 0

@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/apply-operations-to-make-string-empty/description/
+
 def lastNonEmptyString(s):
     while s != "":
         ocurrence = []
