@@ -1,3 +1,0 @@
-def FindTheRunningMedian():
-    return None:
-
