@@ -1,0 +1,146 @@
+a=[3,2,1]
+b = []
+c = []
+n = 3
+hanoi_recursive=(n,src,dest,aux)
+num_disk = 3
+
+#First example
+hanoi(3,src=A,dest=C,aux=B) --> First call to recursive function
+  3>0
+  hanoi(2,src=A,dest=B,aux=C)
+    2>0
+    hanoi(1,src=A,dest=C,aux=B)
+      1>0
+      hanoi(0,src=A,dest=B,aux=C)
+        0>0 not satisfied
+      move_disk(source=A, dest=C)
+        a=[3,2],b=[],c=[1]
+      hanoi(0,src=B,dest=C,aux=A)
+        0>0 not satisfied
+    move_disk(source=A,dest=B)
+      a=[3],b=[2],c=[1]
+    hanoi(1,src=C,dest=B,aux=A)
+      1>0
+      hanoi(0,src=C,dest=A,aux=B)
+        0>0 not satisfied
+      move_disk(source=C,dest=B)
+        a=[3],b=[2,1],c=[]
+      hanoi(0,src=A,dest=B,aux=C)
+        0>0 not satisfied
+  move_disk(src=A,dest=C)
+    a=[],b=[2,1],c=[3]
+  hanoi(2,src=B,dest=C,aux=A)
+    2>0
+    hanoi(1,src=B,dest=A,aux=C)
+      1>0
+      hanoi(0,src=B,dest=C,aux=A)
+        0>0 not satisfied
+      move_disk(src=B,dest=A)
+        a=[1],b=[2],c=[3]
+      hanoi(0,src=C,dest=A,aux=B)
+        0>0 not satisfied
+    move_disk(src=B,dest=C)
+      a=[1],b=[],c=[3,2]
+    hanoi(1,src=A,dest=C,aux=B)
+      1>0
+      hanoi(0,src=A,dest=B,aux=C)
+        0>0 not satisfied
+      move_disk(src=A,dest=C)
+        a=[],b=[],c=[3,2,1]
+      hanoi(0,src=B,dest=C,aux=A)
+        0>0 not satisfied
+
+
+#Second example
+hanoi(3,src=[3,2,1],dest=C=[],aux=B=[]) --> First call to recursive function
+  3>0
+  hanoi(2,src=A=[3,2,1],dest=B=[],aux=C[])
+    2>0
+    hanoi(1,src=A[3,2,1],dest=C=[],aux=B=[])
+      1>0
+      hanoi(0,src=A[3,2,1],dest=B=[],aux=C=[])
+        0>0 not satisfied
+      move_disk(source=A=[3,2,1], dest=C=[])
+        A=[3,2],B=[],C=[1]
+      hanoi(0,src=B=[],dest=C=[1],aux=A=[3,2])
+        0>0 not satisfied
+    move_disk(source=A=[3,2],dest=B=[])
+      a=[3],b=[2],c=[1]
+    hanoi(1,src=C=[1],dest=B=[2],aux=A=[3])
+      1>0
+      hanoi(0,src=C=[1],dest=A=[3],aux=B=[2])
+        0>0 not satisfied
+      move_disk(source=C=[1],dest=B=[2])
+        a=[3],b=[2,1],c=[]
+      hanoi(0,src=A=[3],dest=B=[2,1],aux=C=[])
+        0>0 not satisfied
+  move_disk(src=A=[3,2],dest=C=[])
+    a=[],b=[2,1],c=[3]
+  hanoi(2,src=B=[2,1],dest=C=[3],aux=A=[])
+    2>0
+    hanoi(1,src=B=[2,1],dest=A=[],aux=C=[3])
+      1>0
+      hanoi(0,src=B=[2,1],dest=C=[3],aux=A=[])
+        0>0 not satisfied
+      move_disk(src=B=[2,1],dest=A=[])
+        a=[1],b=[2],c=[3]
+      hanoi(0,src=C=[3],dest=A=[1],aux=B=[2])
+        0>0 not satisfied
+    move_disk(src=B=[2],dest=C=[3])
+      a=[1],b=[],c=[3,2]
+    hanoi(1,src=A=[1],dest=C=[3,2],aux=B=[])
+      1>0
+      hanoi(0,src=A=[1],dest=B=[],aux=C=[3,2])
+        0>0 not satisfied
+      move_disk(src=A=[1],dest=C=[3,2])
+        a=[],b=[],c=[3,2,1]
+      hanoi(0,src=B=[],dest=C=[3,2,1],aux=A=[])
+        0>0 not satisfied
+
+
+#Third example
+hanoi(3,A=[3,2,1],C=[],B=[]) --> First call to recursive function
+  3>0
+  hanoi(2,A=[3,2,1],B=[],C[])
+    2>0
+    hanoi(1,A[3,2,1],C=[],B=[])
+      1>0
+      hanoi(0,A[3,2,1],B=[],C=[])
+        0>0 not satisfied
+      move_disk(A=[3,2,1],C=[])
+        A=[3,2],B=[],C=[1]
+      hanoi(0,B=[],C=[1],A=[3,2])
+        0>0 not satisfied
+    move_disk(A=[3,2],B=[])
+      a=[3],b=[2],c=[1]
+    hanoi(1,C=[1],B=[2],A=[3])
+      1>0
+      hanoi(0,C=[1],A=[3],B=[2])
+        0>0 not satisfied
+      move_disk(C=[1],B=[2])
+        a=[3],b=[2,1],c=[]
+      hanoi(0,A=[3],B=[2,1],C=[])
+        0>0 not satisfied
+  move_disk(A=[3,2],C=[])
+    a=[],b=[2,1],c=[3]
+  hanoi(2,B=[2,1],C=[3],A=[])
+    2>0
+    hanoi(1,B=[2,1],A=[],C=[3])
+      1>0
+      hanoi(0,B=[2,1],C=[3],A=[])
+        0>0 not satisfied
+      move_disk(B=[2,1],A=[])
+        a=[1],b=[2],c=[3]
+      hanoi(0,C=[3],A=[1],B=[2])
+        0>0 not satisfied
+    move_disk(B=[2],C=[3])
+      a=[1],b=[],c=[3,2]
+    hanoi(1,A=[1],C=[3,2],B=[])
+      1>0
+      hanoi(0,A=[1],B=[],C=[3,2])
+        0>0 not satisfied
+      move_disk(A=[1],C=[3,2])
+        a=[],b=[],c=[3,2,1]
+      hanoi(0,B=[],C=[3,2,1],A=[])
+        0>0 not satisfied
