@@ -1,5 +1,5 @@
+#Source: https://www.geeksforgeeks.org/two-pointers-technique/
 from typing import List
-
 
 def IsPairSum(A: List[int], N: int, X: int) -> bool:
     i = 0
