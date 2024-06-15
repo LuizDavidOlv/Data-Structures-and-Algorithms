@@ -1,0 +1,44 @@
+// using System;
+// using System.Collections.Generic;
+// namespace Solution
+// {
+//     public class Solution {
+//         public static void Main(string[] args) {
+//             // you can write to stdout for debugging purposes, e.g.
+
+//             int currentNumber = 2576;
+//             Dictionary<string,string> romanTranslation = new Dictionary<string,string>();   
+//             int scale =  currentNumber/ 1000; //2 
+//             romanTranslation.Add(scale.ToString(),"M");
+
+//             //get the int part
+//             int num2 = currentNumber % 1000;  //576
+//             scale = num2 / 500;
+
+//              romanTranslation.Add(scale.ToString(),"D");
+
+//             num3 = num2 % 500;            
+
+
+
+//             int b =  576;
+//             string bRoman = "D";
+//             int c = 76; 
+//             string cRoman = "LXX";
+//             int d = 6;
+//             string dRoman = "VI";
+//             //string transladedRomanNumeral = a+b+c+d = "MMDLXXVI"
+
+//             Console.WriteLine("This is a debug message");
+//             string numStr = num.ToString();
+//             string[] list = numStr.Split("");
+//             int len = numStr.Length;
+
+//             foreach(string number in list){
+
+//             }
+
+//         }
+//     }
+
+
