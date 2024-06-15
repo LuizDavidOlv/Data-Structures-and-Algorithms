@@ -1,4 +1,5 @@
-from SelectionSort.Example1 import SelectionSort
+from SelectionSort.Example import SelectionSort
+from BubbleSort.Example import BubbleSort
 
 class SortMethods:
     def __init__ (self, unsortedList: list[int]):
@@ -9,7 +10,8 @@ class SortMethods:
         return sortedList
     
     def bubbleSort(self):
-        return 'Method not implemented yet'
+        sortedList = BubbleSort.sort(self.unsortedList)
+        return sortedList
 
     def insertionSort(self):
         return 'Method not implemented yet'
@@ -32,7 +34,7 @@ if __name__ == '__main__':
     print(clear_terminal)
     unsortedList = [64,25,12,22,11]
     SortMethod = SortMethods(unsortedList)
-    sortedList = SortMethod.selectionSort()
+    sortedList = SortMethod.bubbleSort()
     print("Sorted List")
     print(sortedList)
     print('\n')
