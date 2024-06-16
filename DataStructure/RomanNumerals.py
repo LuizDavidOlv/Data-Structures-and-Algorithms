@@ -1,5 +1,3 @@
-from typing import Dict
-
 class IntegerToRoman:  
     def translate(number: int) -> str:
         romanNumerals = [

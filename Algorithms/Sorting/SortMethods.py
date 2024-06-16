@@ -1,23 +1,21 @@
 from SelectionSort.Example import SelectionSort
 from BubbleSort.Example import BubbleSort
-
+from MergeSort.Example import MergeSort
 class SortMethods:
     def __init__ (self, unsortedList: list[int]):
         self.unsortedList = unsortedList
     
     def selectionSort(self) -> list[int]:
-        sortedList = SelectionSort.sort(self.unsortedList)
-        return sortedList
+        return SelectionSort.sort(self.unsortedList)
     
     def bubbleSort(self):
-        sortedList = BubbleSort.sort(self.unsortedList)
-        return sortedList
+        return BubbleSort.sort(self.unsortedList)
 
     def insertionSort(self):
         return 'Method not implemented yet'
 
     def mergeSort(self):
-        return 'Method not implemented yet'
+        return MergeSort.sort(self.unsortedList)
 
     def quickSort(self):
         return 'Method not implemented yet'
