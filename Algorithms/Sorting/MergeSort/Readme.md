@@ -1,7 +1,7 @@
-Time complexity: Θ(N log N)
-Space complexity: O(N)
+# Time complexity: Θ(N log N)
+# Space complexity: O(N)
 
-Explanation:
+# Explanation:
         Merge Sorte is considered to be one of the fastest sorting algorithms, it is a bit more complex than Selection and Bubble sort
 but is it more efficient. The idea of Merge Sort is to divide the data-sets, sort them and join together. The way this algorithm behaves
 is by sorting the left side of the data-set first then the right part and them merging them. Merge sort will divide in two the data-set

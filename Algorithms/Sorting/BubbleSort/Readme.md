@@ -1,6 +1,7 @@
-Time Complexity: O(n^2) -- Ω(n)
-Auxiliray Space: O(1)
+# Time Complexity: O(n^2) -- Ω(n)
+# Auxiliray Space: O(1)
 
+# Explanation
     In bubbble sort, within each interation the algorithm will find the highest value and put it 
 at the end of the data-set or were that value belongs by comparing each pair of elements in the 
 data-set. So Selection Sort sorts from the smallest element to the highest and Bubble Sort from 

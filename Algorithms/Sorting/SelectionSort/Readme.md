@@ -1,15 +1,15 @@
-Time complexity: Θ(N^2)
+# Time complexity: Θ(N^2)
     - One loop to select an element of Array one by one = O(N)
     - Another loop to compare that elements with every other Array element = O(N)
     - Therefore overall complexity =  O(N) * O(N) = O(N*N) = O(N^2)
 
 
-Auxiliary Space: O(1)
+# Auxiliary Space: O(1)
     The only extra memory used is for temporary variable while swapping two values in Array.The 
 selection sort never makes more than O(N) swaps and can be useful when memory weiting is costly.
 
 
-Explanation:
+# Explanation:
     Selection sort operates in a very simple way; it goes through all the elemets in a data-set
 one by one comparing the value of one element to the next cheking to see if the element is smaller,
 it then saves the smallest element found in a variable and when the interation is complete, it will

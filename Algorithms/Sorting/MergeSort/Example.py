@@ -7,14 +7,13 @@ class MergeSort:
         sortedList = unsortedList.copy()
         return sortedList
     
-    def mergeSort(list: list[int], begin: int, end: int):
+    def mergeSort(unsortedList: list[int], begin: int, end: int):
         if begin >= end:
             return unsortedList
         mid = begin + (end-begin)//2
         MergeSort.mergeSort(unsortedList,begin,mid)
         MergeSort.mergeSort(unsortedList,mid+1,end)
         MergeSort.merge(unsortedList,begin,mid,end)
-        return None
     
     # Merge two subLists of list[]
     # First subList is list[left...mid]
