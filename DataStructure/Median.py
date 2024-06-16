@@ -20,45 +20,49 @@
 
 # How would you test these methods?
 
+import bisect
+class Latency:
+        def __init__(self):
+             self.latencyList: list[float] = []
+      
+        def AddLatency(self,num: float):
+            # self.latencyList.append(num)
+            # self.latencyList.sort()
+            bisect.insort(self.latencyList, num)
+        
 
+        def getP50(self) -> float:
+            if(len(self.latencyList) == 0):
+                return 0
+            list = self.latencyList
+            length = len(list)
+            mid: int = length//2
+            if((length % 2) == 0):
+                num1 = list[mid]
+                num2 = list[mid-1]
+                num = (num1+num2)/2
+                return num
+            else:
+                num =list[mid]
+                return num
+        
+        def ClearData(self):
+            self.latencyList.clear()
 
-# namespace Solution
-# {
-#     public  class Solution {
-#         static List<double>  latencyList = new List<double>();
-#         public static void Main(string[] args) {
+if __name__ == '__main__':
+    clear_terminal = "\033[H\033[J"
+    print(clear_terminal)
+    Lat = Latency()
+    Lat.AddLatency(50)
+    Lat.AddLatency(45)
+    Lat.AddLatency(2)
+    Lat.AddLatency(17099)
+    Lat.AddLatency(45)
+    Lat.AddLatency(832)
+    result = Lat.getP50()
+    print("P50: "+str(result))
+    Lat.ClearData()
+    print("Data Cleared")
+    result = Lat.getP50()
+    print("P50: "+str(result))
 
-#                // you can write to stdout for debugging purposes, e.g.
-#             Console.WriteLine("This is a debug message");
-#             AddLatency(50);
-#             AddLatency(45);
-#             AddLatency(2);
-#             AddLatency(17099);
-#             AddLatency(45);
-#             var result = getP50(latencyList);
-#             Console.WriteLine(result);
-#         }
-#         public static void AddLatency(int num)
-#         {
-#             latencyList.Add(num);
-#             latencyList.Sort();
-#         }
-
-#         public static double getP50(List<double> list)
-#         {
-#             var length = list.Count;
-#             int mid = length/2;
-#             if((length % 2) == 0)
-#             {
-#                 var num = list[mid];
-#                 return num;
-#             }
-#             else
-#             {
-#                 var num =list[mid];
-#                 return num;
-#             }
-#             return 0;
-#         }
-#     }
-# }
