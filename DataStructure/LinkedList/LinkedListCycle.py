@@ -12,7 +12,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-
+    # Two pointers approach
     def hasCycle(self, head: Optional[Node]) -> bool:
         fast = head
         while(fast and fast.next):
@@ -20,6 +20,17 @@ class LinkedList:
             fast = fast.next.next
             if head == fast:
                 return True
+        return False
+    
+    # Hash Table approach
+    def hasCycle2(self, head: Optional[Node]) -> bool:
+        visited_nodes = set()
+        current_node = head
+        while current_node:
+            if current_node in visited_nodes:
+                return True
+            visited_nodes.add(current_node)
+            current_node = current_node.next
         return False
 
 if __name__ == "__main__":
