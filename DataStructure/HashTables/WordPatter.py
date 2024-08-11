@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/word-pattern/description/?envType=study-plan-v2&envId=top-interview-150
 # Zip_longest vs zip: https://medium.com/@bonifacechigozie/understanding-zip-longest-vs-zip-in-python-real-life-use-cases-c4204e6aa57e
 
 from itertools import zip_longest
