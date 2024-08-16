@@ -6,7 +6,7 @@ from itertools import zip_longest
 class Solution: 
     def wordPattern(self, pattern: str, s: str) -> bool:
         splitedString = s.split()
-
+        
         patternLength = len(set(pattern))
         stringLength = len(set(splitedString))
         zipedIterablesLength = len(set(zip_longest(pattern,splitedString)))
