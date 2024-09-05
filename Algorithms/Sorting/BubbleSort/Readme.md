@@ -11,5 +11,5 @@ elements to the left and higher elements to the right.
 
 - The worst-case scenario for this algorithm would be if all the elements in the data-set were in
 reverse order making the algorithm make more "swaps", but we do see that the best-case scenario is
-not as bad as Selection Sort bacause unlike Selection Sort this alforithm is smart enough to realize
+not as bad as Selection Sort bacause unlike Selection Sort this algorithm is smart enough to realize
 in its first interation that the data-set is already sorted.

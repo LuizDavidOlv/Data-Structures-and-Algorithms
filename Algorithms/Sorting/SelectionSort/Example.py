@@ -16,6 +16,5 @@ if __name__ == '__main__':
     print(clear_terminal)
     unsortedList = [64,25,12,22,11]
     sortedList = SelectionSort.sort(unsortedList)
-    print("Sorted List")
-    print(sortedList)
-    print('\n')
+    if sortedList == [11, 12, 22, 25, 64]:
+        print("Selection Sort: Passed")
