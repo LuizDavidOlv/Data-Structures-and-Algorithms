@@ -7,7 +7,6 @@ class Solution:
         hIndex = 0
         remainingIndexes = citLength
         for i in range(citLength): 
-            print(f'i: {i}')
             if citations[i] >= remainingIndexes:
                 hIndex = remainingIndexes
                 break
