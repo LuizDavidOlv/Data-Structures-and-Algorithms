@@ -62,10 +62,17 @@ citLength = len(citations)
 remainingIndexes = citLength  
 
 indexes = [0,1,2]  
-x[i] >= remainingIndexes  
-index 0: x[0] >= 2  -> 1 >= 2 ? No  
-index 0: x[1] >= 1  -> 1 >= 1 ? Yes  
-return remainingIndexes
+ 
+
+index 0:   
+- x[0] >= remainingIndexes  
+    1 >= 2 ? False  
+    remainingIndexes -= 1
+
+index 1:
+- x[1] >= remainingIndexes  
+  1 >= 1 ? True  
+  return remainingIndexes
 
 
 ## Example 2
@@ -78,8 +85,11 @@ citLength = len(citations)
 remainingIndexes = citLength
 
 indexes = [0,1]  
-index 0: x[0] >= 1  -> 1 >= 1 ? Yes  
-return remainingIndexes
+
+index 0: 
+- x[0] >= remainingIndexes  
+  1 >= 1 ? True   
+  return remainingIndexes
 
 
 ## Example 3
@@ -92,5 +102,8 @@ citLength = len(citations)
 remainingIndexes = citLength
 
 indexes = [0]  
-index 0: x[0] >= 0  -> 3 >= 0 ? Yes  
-return remainingIndexes
+
+index 0:
+- x[0] >= 0   
+  3 >= 0 ? Yes  
+  return remainingIndexes
