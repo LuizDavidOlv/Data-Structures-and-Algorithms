@@ -21,6 +21,5 @@
 - Purpose: To efficiently locate the index of an element in the array during deletion.
 - Implementation: use the hash table to store not just the presence of elements but also their indices in the array. This way, you can quickly find the position of any element in the array when you need to remove it.
 
-## Space Complecity Considerations
+## Space Complexity Considerations
 - Trade-offs: Using both a hash table and an array increases space usage. However, this is acceptable for achieving the required time complexity.
-
