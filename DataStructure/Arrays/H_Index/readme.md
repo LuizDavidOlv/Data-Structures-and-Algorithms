@@ -25,7 +25,7 @@ hindex= 1
 
 ## Do the same for the remaning numbers in the sorted array
 [1,2, _ , _ , _ , _ , _ , _ ]  
-    # 2 > 7 ? No. Keep the original value of 2 in current position  
+    # 2 >= 7 ? No. Keep the original value of 2 in current position  
 
 hindex = 2  
     # hindex can be updated to 2 bacause it known that the following values will be equal or greater than two.  
@@ -34,7 +34,7 @@ hindex = 2
 
 # x [ i ] > remaining indexes
 [1,2,11, _ , _ , _ , _ , _ ]  
-    #* 11 >= 6? Yes! In this case 6. So 11 turns into 6  
+    #* 11 >= 6? Yes! So 11 "turns" into 6  
 
 [1,2,6, _ , _ , _ , _ , _ ]  
     #* Right here we already know that the awnswer will be 6. That is because all the
