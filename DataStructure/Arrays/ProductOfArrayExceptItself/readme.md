@@ -3,7 +3,7 @@
 # Key Concepts
 
 ##  High level strategy
-- It can be solved by using the concept of prefix and sufffic products
+- It can be solved by using the concept of prefix and sufffix products
     - Prefix Product: The product of all elements before the current index
     - Suffix Product: The product of all elements after the current index
 
