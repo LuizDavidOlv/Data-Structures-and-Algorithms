@@ -1,5 +1,6 @@
-from typing import List
+#Source: https://leetcode.com/problems/merge-intervals/description/?envType=study-plan-v2&envId=top-interview-150
 
+from typing import List
 
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:

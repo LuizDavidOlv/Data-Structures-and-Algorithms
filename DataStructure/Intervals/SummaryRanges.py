@@ -1,5 +1,5 @@
 #Source: https://leetcode.com/problems/summary-ranges?envType=study-plan-v2&envId=top-interview-150
-class Solution:
+class SlidingWindowSolution:
     def summaryRanges(self, nums: list[int]) -> list[str]:
         result_list = []
         range_from = 0
