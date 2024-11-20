@@ -46,14 +46,56 @@ class Solution:
 
         return list(res)
     
+class Solution2:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()  # Sort the array
+        result = []
+        n = len(nums)
+
+        for i in range(n - 2):
+            # Skip duplicate elements for the first number
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
+
+            left = i + 1  # Initialize the left pointer
+            right = n - 1  # Initialize the right pointer
+
+            while left < right:
+                total = nums[i] + nums[left] + nums[right]
+
+                if total == 0:
+                    # Found a triplet that sums up to zero
+                    result.append([nums[i], nums[left], nums[right]])
+
+                    # Skip duplicates for the second number
+                    while left < right and nums[left] == nums[left + 1]:
+                        left += 1
+
+                    # Skip duplicates for the third number
+                    while left < right and nums[right] == nums[right - 1]:
+                        right -= 1
+
+                    # Move both pointers
+                    left += 1
+                    right -= 1
+
+                elif total < 0:
+                    # Need a larger sum; move the left pointer to the right
+                    left += 1
+                else:
+                    # Need a smaller sum; move the right pointer to the left
+                    right -= 1
+
+        return result
+    
 
 if __name__ == '__main__':
     clear_terminal = "\033[H\033[J"
     print(clear_terminal)
-    solution = Solution()
+    solution = Solution2()
     nums = [-1,0,1,2,-1,-4]
     result = solution.threeSum(nums)
-    if result == list({(-1, -1, 2), (-1, 0, 1)}):
+    if result == [[-1, -1, 2], [-1, 0, 1]]:
         print("Passed")
     else:
         print("Failed")
