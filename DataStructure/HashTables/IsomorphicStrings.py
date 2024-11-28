@@ -1,40 +1,45 @@
 from typing import Counter
 
 class Solution:
-    def isIsomorphic(s: str, t: str) -> bool:
-        indexS = [0] * 200 # Stores index of characters in string s
-        indexT = [0] * 200 # Stores index of characters in string t
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        # Initialize mappings for both directions
+        s_to_t_mapping = {}
+        t_to_s_mapping = {}
         
-        length = len(s) # Get the length of both strings
-        
-        if length != len(t): # If the lengths of the two strings are different, they can't be isomorphic
-            return False
-        
-        for i in range(length): # Iterate through each character of the strings
-            if indexS[ord(s[i])] != indexT[ord(t[i])]: # Check if the index of the current character in string s is different from the index of the corresponding character in string t
-                return False # If different, strings are not isomorphic
+        # Iterate over the characters of both strings
+        for char_s, char_t in zip(s, t):
+            # Check if char_s is already mapped in s_to_t_mapping
+            if char_s in s_to_t_mapping:
+                if s_to_t_mapping[char_s] != char_t:
+                    return False  # Inconsistent mapping
+            else:
+                s_to_t_mapping[char_s] = char_t  # Add the mapping
             
-            indexS[ord(s[i])] = i + 1 # updating position of current character
-            indexT[ord(t[i])] = i + 1
-        
-        return True # If the loop completes without returning false, strings are isomorphic
+            # Check if char_t is already mapped in t_to_s_mapping
+            if char_t in t_to_s_mapping:
+                if t_to_s_mapping[char_t] != char_s:
+                    return False  # Inconsistent mapping
+            else:
+                t_to_s_mapping[char_t] = char_s  # Add the mapping
 
-    
+        # If all mappings are consistent, the strings are isomorphic
+        return True
 
 
 
 if __name__ == '__main__':
+    solution = Solution()
     s = "egg"
     t = "aad"
-    result1 = Solution.isIsomorphic(s, t) 
-    if result1 == True:
+    result1 = solution.isIsomorphic(s, t) 
+    if result1 == False:
         print("Test passed")
     else:
         print("Test failed")
         exit()
     s = "foo"
     t = "bar"
-    result2 = Solution.isIsomorphic(s, t)
+    result2 = solution.isIsomorphic(s, t)
     if result2 == False:
         print("Test passed")
     else:
@@ -42,7 +47,7 @@ if __name__ == '__main__':
         exit()
     s = "paper"
     t = "title"
-    result3 = Solution.isIsomorphic(s, t)
+    result3 = solution.isIsomorphic(s, t)
     if result3 == True:
         print("Test passed")
     else:
@@ -50,7 +55,7 @@ if __name__ == '__main__':
         exit()
     s = "badc"
     t = "baba"
-    result4 = Solution.isIsomorphic(s, t)
+    result4 = solution.isIsomorphic(s, t)
     if result4 == False:
         print("Test passed")
     else:
@@ -58,7 +63,7 @@ if __name__ == '__main__':
         exit()
     s = "bbbaaaba"
     t = "aaabbbba"
-    result5 = Solution.isIsomorphic(s, t)
+    result5 = solution.isIsomorphic(s, t)
     if result5 == False:
         print("Test passed")
     else:
