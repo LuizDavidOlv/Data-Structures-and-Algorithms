@@ -3,14 +3,13 @@
 # void AddLatency(int latency) - records a latency measurement in milliseconds
 # int GetP50() - returns the P50 (median) latency value based on currently recorded measurements
 # void ClearData() - removes all existing latency measurements
+# The GetP50() method must execute in constant time. A call to AddLatency() should be as quick as possible given that requirement.
 
-#TODO The GetP50() method must execute in constant time. A call to AddLatency() should be as quick as possible given that requirement.
-
-#? What data structure is best suited to the task? Please implement the three functions above.
-    #* The best data structure for this task is balanced binary search tree or a self-balancing binary tree. 
-    #* Tis structure allows us to efficiently keep track of latencies in sorted order. 
-    #* Since GetP50() must execute in constant time, we can keep track of the median as a separate variable and update it whenever a new latency is added.
-    #* A simplet approach is tho use two heaps, one max heap and one min heap. The max heap will store the lower half of the latencies and the min heap will store the upper half.
+# What data structure is best suited to the task? Please implement the three functions above.
+    # The best data structure for this task is balanced binary search tree or a self-balancing binary tree. 
+    # Tis structure allows us to efficiently keep track of latencies in sorted order. 
+    # Since GetP50() must execute in constant time, we can keep track of the median as a separate variable and update it whenever a new latency is added.
+    # A simplet approach is tho use two heaps, one max heap and one min heap. The max heap will store the lower half of the latencies and the min heap will store the upper half.
 
 #? What is the time complexity of adding a latency measurement?
 #? How would your implementation change if we wanted a different percentile measurement (for example, P90)?
