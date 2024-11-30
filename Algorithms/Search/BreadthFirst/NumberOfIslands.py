@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/number-of-islands/description/?envType=study-plan-v2&envId=top-interview-150
+
 from collections import deque
 from typing import List
 
@@ -19,7 +21,7 @@ class SolutionMutable:
                 for dx, dy in directions:
                     new_x, new_y = x+dx, y+dy
                     if 0 <= new_x < rows and 0  <= new_y < cols and grid[new_x][new_y] == '1':
-                        grid[new_x][new_y] == '0'
+                        grid[new_x][new_y] = '0'
                         queue.append((new_x,new_y))
 
 
@@ -60,3 +62,16 @@ class SolutionImutable:
         
         return count
         
+
+if __name__ == '__main__':
+    grid = [
+        ["1","1","1","1","0"],
+        ["1","1","0","1","0"],
+        ["1","1","0","0","0"],
+        ["0","0","0","0","0"]
+    ]
+
+    solution = SolutionMutable()
+
+    result = solution.numIslands(grid)
+    print(result)
