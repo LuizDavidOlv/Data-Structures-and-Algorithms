@@ -16,41 +16,14 @@
 #? Are there any situations where we could improve the time complexity of adding a latency measurement? For example, what if we know that the API times out after 50ms?
 #? How would you test these methods?
 
-import bisect
 import heapq
-class Solution1:
-        def __init__(self):
-             self.latencyList: list[float] = []
-      
-        def AddLatency(self,num: float):
-            # self.latencyList.append(num)
-            # self.latencyList.sort()
-            bisect.insort(self.latencyList, num)
-        
 
-        def getP50(self) -> float:
-            if(len(self.latencyList) == 0):
-                return 0
-            list = self.latencyList
-            length = len(list)
-            mid: int = length//2
-            if((length % 2) == 0):
-                num1 = list[mid]
-                num2 = list[mid-1]
-                num = (num1+num2)/2
-                return num
-            else:
-                num =list[mid]
-                return num
-        
-        def ClearData(self):
-            self.latencyList.clear()
-
-class Solution2:
+class Solution:
     def __init__(self):
         self.min_heap = []
         self.max_heap = []
       
+    # Time complexity of O(logN)
     def AddLatency(self,latency: float):
         # Add latency to the appropriate heap
         if not self.max_heap or latency <= self.max_heap[0]:
@@ -81,7 +54,7 @@ class Solution2:
 if __name__ == '__main__':
     clear_terminal = "\033[H\033[J"
     print(clear_terminal)
-    Lat = Solution2()
+    Lat = Solution()
     
     Lat.AddLatency(50)
     Lat.AddLatency(45)
