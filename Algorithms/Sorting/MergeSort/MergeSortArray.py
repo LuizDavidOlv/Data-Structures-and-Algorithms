@@ -6,8 +6,8 @@ n = 4
 def merge(self, nums1, m, nums2, n):
         #* Time Complexity: O((n+m)log(n+m))
         #* Space Complexity: O(1)
-        for j in range(n):
-            nums1[m+j] = nums2[j]
+        nums1[:] = nums1[:m]
+        nums1.extend(nums2)
         nums1.sort()
 
 def merge2(self, nums1, m, nums2, n):
