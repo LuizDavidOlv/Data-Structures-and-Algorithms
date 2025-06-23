@@ -1,28 +1,21 @@
+# Source: https://leetcode.com/problems/two-sum/?envType=study-plan-v2&envId=top-interview-150
 from typing import List
 
-
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        possible_solutions = {}
-        solution_indexes = []
-        for num in nums:
-            if num in possible_solutions:
-                if num == possible_solutions[num]:
-                    solution_indexes = [index for index, value in enumerate(nums) if value == possible_solutions[num]]
-                else:
-                    solution_indexes.append(nums.index(possible_solutions[num]))
-                    solution_indexes.append(nums.index(num))
-                return solution_indexes
-
-            possible_solutions[target - num] = num
-
-        return []
+    def twoSum(self, nums: List[int], target:int) -> List[int]:
+        seen: dict[int,int] = {}
+        
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in seen:
+                return [seen[complement],i]
+            seen[num] = i
 
 if __name__ == '__main__':
-    nums = [-1,-2,-3,-4,-5]
+    nums = [-1,-2,-3,-4,-5,-6]
     target = -8
     solution = Solution()
-    result = solution.twoSum(nums, target)
+    result = solution.twoSumMoreThanOneSum(nums, target)
     if result == [2, 4]:
         print("Passed")
     else:
@@ -84,9 +77,5 @@ if __name__ == '__main__':
         print("Passed")
     else:
         print("Failed")
-    
-
-   
-    
 
     
