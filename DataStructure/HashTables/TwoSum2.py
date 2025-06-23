@@ -3,23 +3,18 @@
 # Two Pointers Solution on TwoPointers folder
 
 #* HashTable Solution
+from typing import List
+
+
 class Solution(object):
-    def twoSum(self, numbers, target):
-        visited = {}
-        n = len(numbers)
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        seen: dict[int,int] = {}
 
-        for i in range(n):
-            num = numbers[i]
-            if target - num in visited:
-                indexI, indexJ = visited[target - num][-1] + 1, i + 1
-                return [indexI, indexJ]
-            if num not in visited:
-                visited[num] = [i]
-            else:
-                visited[num] += [i]
-
-        return []
-
+        for i,num in enumerate(numbers):
+            complement = target-num
+            if complement  in seen:
+                return [seen[complement]+1,i+1]
+            seen[num] =i
 
 
 if __name__ == '__main__':
